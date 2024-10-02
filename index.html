@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="flex">
+    <h1>Random Password Generator</h1>
+    <p>Create strong and secure passwords to keep your account safe online.</p>
+    <section class="container">
+      <div class="display-button">
+        <div class="display-pass">
+          <input class="random-pass" type="text" />
+          <span class="strength">Very Strong</span>
+          <img
+            class="relode"
+            width="25"
+            height="25"
+            src="https://img.icons8.com/ios/50/restart--v1.png"
+            alt="restart"
+          />
+        </div>
+        <button class="copyBtn">Copy</button>
+      </div>
+      <div class="length-slider flex">
+        <div class="pass-lenth">
+          Password length : <span class="length"></span>
+        </div>
+        <div class="slider">
+          <button class="minus">-</button>
+          <input
+            class="styled-range"
+            type="range"
+            min="0"
+            max="50"
+            value="15"
+          />
+          <button class="plus">+</button>
+        </div>
+      </div>
+      <div class="options flex">
+        <p>Characters Used:</p>
+        <!-- <input type="checkbox" id="ABC" class="upperLetter" checked />
+        <label for="ABC">ABC</label> -->
+        <input type="checkbox" id="abc" class="lowerLetter" checked />
+        <label for="abc">abc</label>
+        <input type="checkbox" id="123" class="numbers" checked />
+        <label for="123">123</label>
+        <input type="checkbox" id="special" class="symbols" checked />
+        <label for="special">#$&</label>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
