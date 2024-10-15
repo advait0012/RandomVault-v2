@@ -6,7 +6,6 @@ const length = document.querySelector(".length");
 const minus = document.querySelector(".minus");
 const slider = document.querySelector(".styled-range");
 const plus = document.querySelector(".plus");
-const upper = document.querySelector(".upperLetter");
 const lower = document.querySelector(".lowerLetter");
 const numbers = document.querySelector(".numbers");
 const symbols = document.querySelector(".symbols");
@@ -14,7 +13,6 @@ const symbols = document.querySelector(".symbols");
 let char = "abcdefghijklmnopqrstuvwxyz";
 let num = "0123456789";
 let special = "(!@#$%^&*)";
-let upperChar = char.toUpperCase();
 
 length.textContent = slider.value;
 
@@ -23,13 +21,6 @@ function randomCharFunc() {
   let randomChar = "";
   let charRandom = Math.floor(Math.random() * char.length);
   return (randomChar += char[charRandom]);
-}
-
-//Generates Random Uppercase letters
-function randomUpperCharFunc() {
-  let randomUpperChar = "";
-  let charUpperRandom = Math.floor(Math.random() * char.length);
-  return (randomUpperChar += upperChar[charUpperRandom]);
 }
 
 //Generates Random Number
@@ -44,19 +35,6 @@ function randomspecialFunc() {
   let randomspecial = "";
   let specialRandom = Math.floor(Math.random() * special.length);
   return (randomspecial += special[specialRandom]);
-}
-
-//generates random mix of uppercase and lowercase letters
-function randomUpperLowerChar() {
-  let upperLowerchar = "";
-  const upperLower = Math.random() < 0.5;
-  if (upperLower) {
-    const randomUpperLower = Math.floor(Math.random() * char.length);
-    upperLowerchar += char[randomUpperLower];
-  } else {
-    const randomUpperLower = Math.floor(Math.random() * char.length);
-    upperLowerchar += upperChar[randomUpperLower];
-  }
 }
 
 //generates random mix of lowercase letters and numbers
@@ -117,28 +95,6 @@ function randomSpecialCharNum() {
     charNumSpecialRandom += num[specialCharNumRandom];
   }
   return charNumSpecialRandom;
-}
-
-//generates random mix of lowercase letters, numbers, symbols, uppercase letters
-function randomUpperSpecialCharNum() {
-  let charUpperNumSpecialRandom = "";
-  const specialCharNum = Math.random() < 0.25;
-  if (specialCharNum) {
-    const specialCharNumRandom = Math.floor(Math.random() * char.length);
-    charUpperNumSpecialRandom += char[specialCharNumRandom];
-  }
-  if (specialCharNum) {
-    const specialCharNumRandom = Math.floor(Math.random() * special.length);
-    charUpperNumSpecialRandom += special[specialCharNumRandom];
-  }
-  if (specialCharNum) {
-    const specialCharNumRandom = Math.floor(Math.random() * num.length);
-    charUpperNumSpecialRandom += num[specialCharNumRandom];
-  } else {
-    const specialCharNumRandom = Math.floor(Math.random() * num.length);
-    charUpperNumSpecialRandom += upper[specialCharNumRandom];
-  }
-  return charUpperNumSpecialRandom;
 }
 
 slider.addEventListener("input", () => {
