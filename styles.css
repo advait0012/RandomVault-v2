@@ -167,3 +167,21 @@ label::after {
 input[type="checkbox"]:checked + label::after {
   opacity: 1;
 }
+
+.feedback-message {
+  display: none;
+  position: absolute;
+  top: 35rem;
+  bottom: 0;
+  left: 45rem;
+  right: 0;
+}
+
+.error-message{
+  display: none;
+  position: absolute;
+  top: 40rem;
+  bottom: 0;
+  left: 38rem;
+  right: 0;
+}

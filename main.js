@@ -179,3 +179,38 @@ plus.addEventListener("click", generateRandomString);
 minus.addEventListener("click", generateRandomString);
 reload.addEventListener("click", generateRandomString);
 input.addEventListener("click", generateRandomStringInitial());
+
+function copyToClipboard() {
+  const inputVal = input.value.trim();
+  const feedbackMessage = document.querySelector(".feedback-message");
+  const errorMessage = document.querySelector(".error-message");
+  feedbackMessage.style.display = "none";
+  errorMessage.style.display = "none";
+  if (inputVal === "") {
+    errorMessage.textContent =
+      "Error: The input is empty! Please enter some text to copy.";
+    errorMessage.style.display = "block";
+    setTimeout(() => {
+      errorMessage.style.display = "none";
+    }, 2000);
+    return;
+  }
+  input.select();
+  navigator.clipboard
+    .writeText(inputVal)
+    .then(() => {
+      feedbackMessage.textContent = "Copied!";
+      feedbackMessage.style.display = "block";
+      setTimeout(() => {
+        feedbackMessage.style.display = "none";
+      }, 2000);
+      input.value = "";
+    })
+    .catch((err) => {
+      console.error("Failed to copy: ", err);
+    });
+}
+
+copy.addEventListener("click", () => {
+  copyToClipboard();
+});
