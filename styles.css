@@ -180,8 +180,8 @@ input[type="checkbox"]:checked + label::after {
 .error-message{
   display: none;
   position: absolute;
-  top: 40rem;
+  top: 35rem;
   bottom: 0;
-  left: 38rem;
+  left: 34rem;
   right: 0;
 }

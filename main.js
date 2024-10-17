@@ -188,7 +188,7 @@ function copyToClipboard() {
   errorMessage.style.display = "none";
   if (inputVal === "") {
     errorMessage.textContent =
-      "Error: The input is empty! Please set the lenth of the password.";
+      "Error: The input is empty! Please set the length of the password.";
     errorMessage.style.display = "block";
     setTimeout(() => {
       errorMessage.style.display = "none";
